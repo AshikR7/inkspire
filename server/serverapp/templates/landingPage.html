@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <style>
+        body{
+            margin: 0;
+        }
+        .wrapper{
+            height: 100vh;
+            overflow-y:auto ;
+            overflow-x: hidden;
+            perspective: 10px;
+        }
+        header{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            transform-style: preserve-3d;
+            z-index: -1;
+        }
+        .sky{
+            transform: translateZ(-10px) scale(2.1) ;
+
+        }
+        .mountain{
+            transform: translateZ(-5px) scale(1.5) ;
+
+        }
+
+        .tree{
+            transform: translateZ(0px) scale(1) ;
+
+        }
+        .water{
+            transform: translateZ(1px) scale(.9) ;
+
+        }
+
+
+        .boat{
+            transform: translateZ(2px) scale(.9) ;
+
+        }
+
+        .title{
+
+            transform: translateZ(5px) scale(.5) ;
+
+
+        }
+
+
+        .sky,
+        .mountain,
+        .water,
+        .tree,
+        .boat{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        .title{
+            font-size: 7rem;
+            color:white;
+            text-shadow:0 0 5px black ;
+
+        }
+        .bl{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            transform-style: preserve-3d;
+            z-index: -1;
+        }
+        .blog{
+            position: absolute;
+            height: 90%;
+            width: 90%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        .title2{
+
+            transform: translateZ(5px) scale(.5) ;
+
+
+        }
+        .title2{
+            font-size: 7rem;
+            color:white;
+            text-shadow:0 0 5px black ;
+
+        }
+
+        section{
+            font-size: 2rem;
+            padding: 2rem;
+            background-color: #333;
+            color:rgb(0, 0, 2);
+        }
+        .multicolortext {
+        background-image: linear-gradient(to left, violet, indigo, green, blue, yellow, orange, red);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+
+.wrap {
+  height: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  min-width: 200px;
+  min-height: 60px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  font-weight: 700;
+  color: #313133;
+  background: #4FD1C5;
+background: linear-gradient(90deg, rgba(129,230,217,1) 0%, rgba(79,209,197,1) 100%);
+  border: none;
+  border-radius: 1000px;
+  box-shadow: 12px 12px 24px rgba(79,209,197,.64);
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  padding: 10px;
+  }
+
+button::before {
+content: '';
+  border-radius: 1000px;
+  min-width: calc(300px + 12px);
+  min-height: calc(60px + 12px);
+  border: 6px solid #00FFCB;
+  box-shadow: 0 0 60px rgba(0,255,203,.64);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all .3s ease-in-out 0s;
+}
+
+.button:hover, .button:focus {
+  color: #313133;
+  transform: translateY(-6px);
+}
+
+button:hover::before, button:focus::before {
+  opacity: 1;
+}
+
+button::after {
+  content: '';
+  width: 30px; height: 30px;
+  border-radius: 100%;
+  border: 6px solid #00FFCB;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: ring 1.5s infinite;
+}
+
+button:hover::after, button:focus::after {
+  animation: none;
+  display: none;
+}
+
+@keyframes ring {
+  0% {
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+  }
+  100% {
+    width: 200px;
+    height: 200px;
+    opacity: 0;
+  }
+}
+
+
+
+
+    </style>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+</head>
+<body>
+<script>
+  AOS.init();
+</script>
+    <div class="wrapper">
+        <header>
+            <img src="{% static 'parallax/sky1.png'%}" class="sky" >
+            <img src="{% static 'parallax/mountain2.png'%}" class="mountain"  >
+            <img src="{% static 'parallax/tree4.png'%}" class="tree" >
+            <img src="{% static 'parallax/water3.png'%}" class="water" >
+            <img src="{% static 'parallax/boat5.png'%}" class="boat" >
+            <h1 class="title">Welcome To Inkspire</h1>
+            <!-- <h3 class="title">Share your own story</h3> -->
+        </header>
+        <div class="video" style="margin-left: 25px; display: flex;">
+            <video  width="25%" height="25%"  autoplay muted loop>
+                <source src="{% static 'parallax/video1.mp4'%}">
+            </video>
+            <div style="margin-left: 25%;margin-top: 9%;">
+            <h3 class="multicolortext" style="font-family: Georgia, serif; font-size:300%; margin-left:5%;margin-bottom: -25px;">
+                <b>Inkspire :<br> Inspiring minds</b>
+            </h3>
+            <p   style="font-family: Georgia, serif; font-size:250%; margin-left:5%; "><b>A platform designed <br>to inspire and empower <br>
+                <!-- you to share your creativity with the world.
+                 We believe that everyone has a unique perspective and voice,
+                and that these perspectives deserve to be heard and celebrated.
+                Our website is a space where you can unleash your creativity and share your ideas, stories, and experiences with a global audience.
+                 Whether you're a seasoned writer or just starting out, we welcome all levels of expertise and encourage you to embrace your creativity and express yourself freely.  -->
+                </b></p>
+                <div class="wrap" style="display: flex;margin-left: -30%;">
+                    <a href="http://127.0.0.1:8000/inkspire/signup/"  ><button class="button" > Join Us</button></a>
+                  </div>
+            </div>
+        </div>
+         <div class="bl">
+            <img src="{% static 'parallax/blog.jpg'%}" class="blog">
+            <h3 class="title2" >Share Your Story</h3>
+         </div>
+        <section>
+
+        </section>
+
+    </div>
+
+</body>
+</html>

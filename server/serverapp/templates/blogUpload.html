@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog Upload</title>
+</head>
+<body>
+<form method="post" enctype="multipart/form-data">{% csrf_token %}
+          <label >Enter Ttile</label>
+          <input type="text" name="mainTitleName"/><br>
+          <label >Cover Photo</label>
+          <input type="file" name="image"/><br>
+          <label >Video</label>
+          <input type="file" name="video"/><br>
+          <label >Summary</label>
+          <textarea name="summary" rows="4" cols="50"></textarea><br>
+          <label > First Sub header </label>
+          <input type="text" name="subTitleNameFirst"/><br>
+            <label >Enter </label>
+          <textarea name="paragarphFirst" rows="4" cols="50"></textarea><br>
+            <label > Second Sub header </label>
+          <input type="text" name="subTitleNameSecond"/><br>
+            <label >Enter </label>
+          <textarea name="paragarphSecond" rows="4" cols="50"></textarea><br>
+          <button type="submit">Upload</button>
+      </form>
+
+</body>
+</html>

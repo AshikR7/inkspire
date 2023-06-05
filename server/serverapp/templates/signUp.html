@@ -1,0 +1,301 @@
+<html>
+{% load static %}
+  <head>
+    <style>
+      /* Add styles for form animation */
+      .form-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+
+
+      }
+
+
+
+      form {
+        background-color: rgb(210, 42, 198);
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(8, 8, 8, 0.1);
+        padding: 30px;
+        width: 400px;
+        transition: all 0.9s ease-in-out;
+        transform: scale(0);
+        opacity: 0;
+
+      }
+      th {
+        text-align: left;
+        }
+
+
+
+      form.show {
+        opacity: 1;
+<!--        transform: scale(1);-->
+      }
+
+
+
+         body{
+
+        background-repeat: no-repeat;
+        background-size: 100% 1000px;
+    }
+        *,
+  *:before,
+  *:after{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+  }
+  body{
+      background-color: #080710;
+  }
+  .background{
+      width: 430px;
+      height: 520px;
+      position: absolute;
+      transform: translate(-50%,-50%);
+      left: 50%;
+      top: 50%;
+  }
+  .background .shape{
+      height: 200px;
+      width: 200px;
+      position: absolute;
+      border-radius: 50%;
+  }
+  /* .shape:first-child{
+      background: linear-gradient(
+          #1845ad,
+          #23a2f6
+      );
+      left: -80px;
+      top: -80px;
+  } */
+  /* .shape:last-child{
+      background: linear-gradient(
+          to right,
+          #ff512f,
+          #f09819
+      );
+      right: -30px;
+      bottom: -80px;
+  } */
+  form{
+      height: 520px;
+      width: 400px;
+      background-color: rgba(255,255,255,0.13);
+      position: absolute;
+      transform: translate(-50%,-50%);
+      top: 50%;
+      left: 50%;
+      border-radius: 10px;
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255,255,255,0.1);
+      box-shadow: 0 0 40px rgba(8,7,16,0.6);
+      padding: 50px 35px;
+  }
+  form *{
+      font-family: 'Poppins',sans-serif;
+      color: #ffffff;
+      letter-spacing: 0.5px;
+      outline: none;
+      border: none;
+  }
+  form h3{
+      font-size: 32px;
+      font-weight: 500;
+      line-height: 42px;
+      text-align: center;
+  }
+
+  label{
+      display: block;
+      margin-top: 30px;
+      font-size: 16px;
+      font-weight: 500;
+  }
+  input{
+      display: block;
+      height: 20px;
+      width: 100%;
+      background-color: rgba(255,255,255,0.07);
+      border-radius: 3px;
+      padding: 0 5px;
+      margin-top: 0px;
+      font-size: 14px;
+      font-weight: 300;
+  }
+  ::placeholder{
+      color: #e5e5e5;
+  }
+  button{
+      margin-top: 8px;
+      margin-left:67px;
+      width: 60%;
+      background-color: #ffffff;
+      color: #080710;
+      padding: 15px 0;
+      font-size: 18px;
+      font-weight: 600;
+      border-radius: 5px;
+      cursor: pointer;
+  }
+  .login{
+    margin-top: 8px;
+    margin-left:40px;
+  }
+  .social{
+    margin-top: 30px;   body{
+
+        background-repeat: no-repeat;
+        background-size: 100% 1000px;
+    }
+        *,
+  *:before,
+  *:after{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+  }
+  body{
+      background-color: #080710;
+  }
+  .background{
+      width: 430px;
+      height: 520px;
+      position: absolute;
+      transform: translate(-50%,-50%);
+      left: 50%;
+      top: 50%;
+  }
+  .background .shape{
+      height: 200px;
+      width: 200px;
+      position: absolute;
+      border-radius: 50%;
+  }
+  /* .shape:first-child{
+      background: linear-gradient(
+          #1845ad,
+          #23a2f6
+      );
+      left: -80px;
+      top: -80px;
+  } */
+  /* .shape:last-child{
+      background: linear-gradient(
+          to right,
+          #ff512f,
+          #f09819
+      );
+      right: -30px;
+      bottom: -80px;
+  } */
+  form{
+      height: 520px;
+      width: 400px;
+      background-color: rgba(255,255,255,0.13);
+      position: absolute;
+      transform: translate(-50%,-50%);
+      top: 50%;
+      left: 50%;
+      border-radius: 10px;
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255,255,255,0.1);
+      box-shadow: 0 0 40px rgba(8,7,16,0.6);
+      padding: 50px 35px;
+  }
+  form *{
+      font-family: 'Poppins',sans-serif;
+      color: #ffffff;
+      letter-spacing: 0.5px;
+      outline: none;
+      border: none;
+  }
+  form h3{
+      font-size: 32px;
+      font-weight: 500;
+      line-height: 42px;
+      text-align: center;
+  }
+
+  label{
+      display: block;
+      margin-top: 30px;
+      font-size: 16px;
+      font-weight: 500;
+  }
+  input{
+      display: block;
+      height: 50px;
+      width: 100%;
+      background-color: rgba(255,255,255,0.07);
+      border-radius: 3px;
+      padding: 0 10px;
+      margin-top: 8px;
+      font-size: 14px;
+      font-weight: 300;
+  }
+  ::placeholder{
+      color: #e5e5e5;
+  }
+  button{
+      margin-top: 25px;
+      margin-left:20px;
+      width: 60%;
+      background-color: #ffffff;
+      color: #080710;
+      padding: 15px 0;
+      font-size: 18px;
+      font-weight: 600;
+      border-radius: 5px;
+      cursor: pointer;
+  }
+
+
+
+
+    </style>
+  </head>
+  <body style="background-image: url({% static 'signUp/registerBg2.jpg' %})">
+
+ <div class="background">
+          <div class="shape"></div>
+          <div class="shape"></div>
+      </div>
+      <form method="post" enctype="multipart/form-data">{% csrf_token %}
+          <h3>Join Us</h3>
+          <label >Username</label>
+          <input type="text" name="username" required />
+          <label >First Name</label>
+          <input type="text" name="first_name" required />
+          <label >Last Name</label>
+          <input type="text" name="last_name" required />
+          <label >Email</label>
+          <input type="email" name="email" required />
+          <label >Password</label>
+          <input type="password" name="password" required />
+          <label >pic</label>
+          <input type="file" name="proPic" required />
+          <button  type="submit">Sign Up</button>
+          <div class="login">All Ready Have Account? <a href="http://127.0.0.1:8000/inkspire/login/"><b>Login</b></a></div>
+
+      </form>
+
+
+
+    <!-- Add JavaScript for form animation -->
+    <script>
+      const form = document.querySelector("form");
+
+      setTimeout(() => {
+        form.classList.add("show");
+      }, 100);
+    </script>
+  </body>
+</html>
