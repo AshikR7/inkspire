@@ -26,8 +26,11 @@ Inkspire is a powerful and flexible blogging website built with Django. It provi
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/inkspire.git
-   cd inkspire
+      git clone https://github.com/your-username/inkspire.git
+2. Move to  the folder
+
+   ```bash
+      cd inkspire
    python3 -m venv env
    source env/bin/activate  # Linux/Mac
    .\env\Scripts\activate  # Windows
