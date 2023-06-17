@@ -5,12 +5,12 @@ from django.contrib.auth.models import User
 
 class profile(models.Model):
     user=models.OneToOneField(User,on_delete=models.CASCADE)
-    proPic = models.FileField(upload_to='serverapp/static/profileImages')
+    # proPic = models.ImageField(upload_to='serverapp/static/profile_pictures/', blank=True)
     auth_token=models.CharField(max_length=100)
     is_verified=models.BooleanField(default=False)
     created_at=models.DateTimeField(auto_now_add=True)
     def __str__(self):
-        return self.user
+        return self.user.username
 
 class blogUploadModel(models.Model):
     blogername=models.CharField(max_length=20)
@@ -23,10 +23,12 @@ class blogUploadModel(models.Model):
     subTitleNameSecond= models.CharField(max_length=40, blank=True, null=True)
     paragarphSecond=models.CharField(max_length=255,blank=True, null=True)
 
-# class profileImage(models.Model):
-#     proImage=models.OneToOneField(User,on_delete=models.CASCADE)
-#     proPic=models.FileField(upload_to='serverapp/static/profileImages')
-#     def __str__(self):
-#         return self.proImage
+# class UserImage(models.Model):
+#     userPic= models.OneToOneField(User,on_delete=models.CASCADE)
+#     avatar = models.ImageField(upload_to='serverapp/static/profileImage')
+
+class proImage(models.Model):
+    proPic = models.ImageField(upload_to='serverapp/static/profile_pictures/', blank=True)
+    name=models.CharField(max_length=20)
 
 

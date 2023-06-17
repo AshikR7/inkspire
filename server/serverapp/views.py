@@ -18,7 +18,7 @@ def signUpView(request):
         last_name=request.POST.get('last_name')
         email = request.POST.get('email')
         password=request.POST.get('password')
-        proPic=request.POST.get('proPic')
+        # proPic=request.POST.get('proPic')
 
         #checking whether the username exists
 
@@ -38,7 +38,7 @@ def signUpView(request):
         #import uuid
         auth_token=str(uuid.uuid4())
         #new model is created
-        profile_obj=profile.objects.create(user=user_obj,auth_token=auth_token,proPic=proPic)
+        profile_obj=profile.objects.create(user=user_obj,auth_token=auth_token)
         profile_obj.save()
         sendMailSignUp(email,auth_token)
         return render(request,'success.html')
@@ -84,15 +84,25 @@ def userLogin(request):
             return redirect(userLogin)
         return redirect(index)
     return render(request,'userLogin.html')
+def profileImageUpload(request):
+    if request.method == 'POST':
+        un = request.session['username']
+        a = proImageForm(request.POST, request.FILES)
+        if a.is_valid():
+            img = a.cleaned_data['proPic']
+            b=proImage(proPic=img,name=un)
+            b.save()
+    return render(request,'uploadprofile.html')
+
 
 def userProfile(request):
     un=request.session['username']
-    a=User.objects.filter(username=un)
+    a=proImage.objects.filter(name=un)
     pro=[]
     for i in a:
         b = i.proPic
         pro.append(str(b).split('/')[-1])
-    return render(request,'user_profile.html',{'username':un,'pro':pro})
+    return render(request,'user_profile.html',{'username':un,'image':pro})
 def landingPage(request):
     return render(request,'landingPage.html')
 
