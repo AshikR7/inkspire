@@ -9,7 +9,7 @@ urlpatterns=[
     path('index/',index),
     path('blogupload/',blogUpload),
     path('blogdisplay/<int:id>',blogDisplay),
-    # path('proimageupload',proImage)
+    path('proimageupload',profileImageUpload)
 
 
 ]
