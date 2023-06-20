@@ -99,10 +99,14 @@ def userProfile(request):
     un=request.session['username']
     a=proImage.objects.filter(name=un)
     pro=[]
+    na=[]
     for i in a:
+        z=i.name
+        na.append(z)
         b = i.proPic
         pro.append(str(b).split('/')[-1])
-    return render(request,'user_profile.html',{'username':un,'image':pro})
+    pi=zip(pro,na)
+    return render(request,'user_profile.html',{'username':un,'image':pi})
 def landingPage(request):
     return render(request,'landingPage.html')
 
@@ -125,7 +129,17 @@ def index(request):
         d = i.id
         id.append(d)
     mylist = zip(titleName, cover, sumary, artistName,id)
-    return render(request, 'indexOne.html', {'mylist': mylist})
+    un = request.session['username']
+    a = proImage.objects.filter(name=un)
+    pro = []
+    na = []
+    for i in a:
+        z = i.name
+        na.append(z)
+        b = i.proPic
+        pro.append(str(b).split('/')[-1])
+    pi = zip(pro, na)
+    return render(request, 'indexOne.html', {'mylist': mylist,'image':pi})
 def blogUpload(request):
     if request.method=='POST':
         a=blogUploadForm(request.POST,request.FILES)

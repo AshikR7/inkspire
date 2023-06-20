@@ -28,7 +28,7 @@ class blogUploadModel(models.Model):
 #     avatar = models.ImageField(upload_to='serverapp/static/profileImage')
 
 class proImage(models.Model):
-    proPic = models.ImageField(upload_to='serverapp/static/profile_pictures/', blank=True)
+    proPic = models.ImageField(upload_to='serverapp/static/profile_pictures', blank=True)
     name=models.CharField(max_length=20)
 
 
