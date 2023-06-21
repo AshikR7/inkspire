@@ -6,7 +6,7 @@
     <!--- basic page needs
     ================================================== -->
     <meta charset="utf-8">
-    <title>Standard Post - Calvin</title>
+    <title>Calvin</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -59,22 +59,22 @@
 
                 <h3 class="s-header__nav-heading h6">Navigate to</h3>
 
-                <ul class="s-header__nav">
-                    <li><a href="index.html" title="">Home</a></li>
+               <ul class="s-header__nav">
+                    <li class="current"><a href="http://127.0.0.1:8000/inkspire/index/" title="">Home</a></li>
                     <li class="has-children">
                         <a href="#0" title="">Categories</a>
                         <ul class="sub-menu">
-                            <li><a href="category.html">Design</a></li>
-                            <li><a href="category.html">Lifestyle</a></li>
-                            <li><a href="category.html">Photography</a></li>
-                            <li><a href="category.html">Vacation</a></li>
+                            <li><a href="">Design</a></li>
+                            <li><a href="http://127.0.0.1:8000/inkspire/profile/">profile</a></li>
+                            <li><a href="http://127.0.0.1:8000/inkspire/blogupload/">upload</a></li>
+                            <li><a href="http://127.0.0.1:8000/inkspire/proimageupload">ProPic</a></li>
                             <li><a href="category.html">Work</a></li>
                             <li><a href="category.html">Health</a></li>
                             <li><a href="category.html">Family</a></li>
                             <li><a href="category.html">Relationship</a></li>
                         </ul>
                     </li>
-                    <li class="has-children current">
+                    <li class="has-children">
                         <a href="#0" title="">Blog</a>
                         <ul class="sub-menu">
                             <li><a href="single-video.html">Video Post</a></li>
@@ -82,10 +82,11 @@
                             <li><a href="single-standard.html">Standard Post</a></li>
                         </ul>
                     </li>
-                    <li><a href="styles.html" title="">Styles</a></li>
-                    <li><a href="about.html" title="">About</a></li>
+                    <li><a href="styles.html" title="">Profile</a></li>
+                    <li><a href="about.html" title="">Upload</a></li>
                     <li><a href="contact.html" title="">Contact</a></li>
                 </ul> <!-- end s-header__nav -->
+
 
                 <a href="#0" title="Close Menu" class="s-header__overlay-close close-mobile-menu">Close</a>
 
@@ -115,9 +116,16 @@
 
         </div> <!-- end s-header__search wrap -->
 
-        <a class="s-header__search-trigger" href="#">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.982 17.983"><path fill="#010101" d="M12.622 13.611l-.209.163A7.607 7.607 0 017.7 15.399C3.454 15.399 0 11.945 0 7.7 0 3.454 3.454 0 7.7 0c4.245 0 7.699 3.454 7.699 7.7a7.613 7.613 0 01-1.626 4.714l-.163.209 4.372 4.371-.989.989-4.371-4.372zM7.7 1.399a6.307 6.307 0 00-6.3 6.3A6.307 6.307 0 007.7 14c3.473 0 6.3-2.827 6.3-6.3a6.308 6.308 0 00-6.3-6.301z"/></svg>
-        </a>
+<!--        <a class="s-header__search-trigger" href="#">-->
+<!--            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.982 17.983"><path fill="#010101" d="M12.622 13.611l-.209.163A7.607 7.607 0 017.7 15.399C3.454 15.399 0 11.945 0 7.7 0 3.454 3.454 0 7.7 0c4.245 0 7.699 3.454 7.699 7.7a7.613 7.613 0 01-1.626 4.714l-.163.209 4.372 4.371-.989.989-4.371-4.372zM7.7 1.399a6.307 6.307 0 00-6.3 6.3A6.307 6.307 0 007.7 14c3.473 0 6.3-2.827 6.3-6.3a6.308 6.308 0 00-6.3-6.301z"/></svg>-->
+<!--        </a>-->
+
+                      <li style="margin-top:-160px">
+                        {% for i,j in image %}
+                            <h1 style="color:blue">{{j}}</h1>
+                            <img src="/static/profile_pictures/{{i}}" alt="" style="width:60px;height:60px;border-radius: 100%;">
+                            {% endfor %}
+                    </li>
 
     </header> <!-- end s-header -->
 
@@ -125,7 +133,6 @@
     <!-- content
     ================================================== -->
     <section class="s-content">
-
         <div class="row">
             <div class="column large-12">
 
@@ -133,167 +140,120 @@
 
                     <div class="s-content__media">
                         <div class="s-content__post-thumb">
-                            <img src="images/thumbs/single/single-post-1050.jpg"
-                                 srcset="images/thumbs/single/single-post-2100.jpg 2100w,
-                                         images/thumbs/single/single-post-1050.jpg 1050w,
-                                         images/thumbs/single/single-post-525.jpg 525w" sizes="(max-width: 2100px) 100vw, 2100px" alt="">
+
+                        <!--  for loop for video and image -->
+                         {% for i, j in my %}
+                            <img src="/static/blogImages/{{i}}"
+                                 srcset=" " width="100%" sizes="(max-width: 2100px) 100vw, 2100px" alt="">
                         </div>
                     </div> <!-- end s-content__media -->
 
                     <div class="s-content__entry-header">
-                        <h1 class="s-content__title s-content__title--post">Hey, This Is A Standard Format Post.</h1>
+
+                        <!--for loop for text content start here-->
+                            {% for i in mylist %}
+                        <h1 class="s-content__title s-content__title--post">{{i.mainTitleName}}</h1>
                     </div> <!-- end s-content__entry-header -->
 
                     <div class="s-content__primary">
 
                         <div class="s-content__entry-content">
 
-                            <p class="lead">
-                            Duis ex ad cupidatat tempor Excepteur cillum cupidatat fugiat nostrud cupidatat dolor
-                            sunt sint sit nisi est eu exercitation incididunt adipisicing veniam velit id fugiat
-                            enim mollit amet anim veniam dolor dolor irure velit commodo cillum sit nulla ullamco
-                            magna amet magna cupidatat qui labore cillum sit in tempor veniam consequat non laborum
-                            adipisicing aliqua ea nisi sint. Unde quod at minus quia velit ipsa ea qui. </p>
+                            <p class="lead">{{i.summary}}</p>
+                            {% endfor %}
+                                <!-- for loop for main heading and summary ends here -->
+
 
                             <p>
-                            Duis ex ad cupidatat tempor Excepteur cillum cupidatat fugiat nostrud cupidatat dolor
-                            sunt sint sit nisi est eu exercitation incididunt adipisicing veniam velit id fugiat
-                            enim mollit amet anim veniam dolor dolor irure velit commodo cillum sit nulla ullamco
-                            magna amet magna cupidatat qui labore cillum sit in tempor veniam consequat non laborum
-                            adipisicing aliqua ea nisi sint ut quis proident ullamco ut dolore culpa occaecat ut
-                            laboris in sit minim cupidatat ut dolor voluptate enim veniam consequat occaecat fugiat
-                            in adipisicing in amet Ut nulla nisi non ut enim aliqua laborum mollit quis nostrud sed sed.
+                                <video  controls>
+                                      <source src="/static/blogVideo/{{j}}"    sizes="(max-width: 2100px) 100vw, 2100px">
+                                    </video>
                             </p>
+                            {% endfor %}
+                            <!--   for loop for video and image ends here   -->
+                            <!-- for loop for 1st heading,1st paragraph,2nd heading,2nd paragraph stats here-->
+                            {% for i in mylist %}
+                            <h2>{{i.subTitleNameFirst}}</h2>
 
-                            <p>
-                                <img src="images/sample-1050.jpg"
-                                        srcset="images/sample-2100.jpg 2100w,
-                                                images/sample-1050.jpg 1050w,
-                                                images/sample-525.jpg 525w" sizes="(max-width: 2100px) 100vw, 2100px" alt="">
-                            </p>
+                            <p>{{i.paragarphFirst}}</p>
 
-                            <p>
-                            Duis ex ad cupidatat tempor Excepteur cillum cupidatat fugiat nostrud cupidatat dolor
-                            sunt sint sit nisi est eu exercitation incididunt adipisicing veniam velit id fugiat
-                            enim mollit amet anim veniam dolor dolor irure velit commodo cillum sit nulla ullamco
-                            magna amet magna cupidatat qui labore cillum sit in tempor veniam consequat non laborum
-                            adipisicing aliqua ea nisi sint ut quis proident ullamco ut dolore culpa occaecat ut
-                            laboris in sit minim cupidatat ut dolor voluptate enim veniam consequat occaecat fugiat
-                            in adipisicing in amet Ut nulla nisi non ut enim aliqua laborum mollit quis nostrud sed sed.
-                            </p>
 
-                            <h2>Large Heading</h2>
+                            <h3>{{i.subTitleNameSecond}}</h3>
 
-                            <p>
-                            Harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta
-                            nobis est eligendi optio cumque nihil impedit quo minus <a href="http://#">omnis voluptas assumenda est</a>
-                            id quod maxime placeat facere possimus, omnis dolor repellendus. Temporibus autem quibusdam et
-                            aut officiis debitis aut rerum necessitatibus saepe eveniet ut et.</p>
+                            <p>{{i.paragarphSecond}}</p>
+                            {% endfor %}
 
-                            <blockquote>
-                                <p>
-                                For God so loved the world, that he gave his only Son, that whoever believes in
-                                him should not perish but have eternal life. For God did not send his Son into
-                                the world to condemn the world, but in order that the world might be
-                                saved through him.
-                                </p>
-                                <cite>John 3:16-17 ESV</cite>
-                            </blockquote>
+                        <!-- for loop for 1st heading,1st paragraph,2nd heading,2nd paragraph stats here                           -->
 
-                            <p>
-                            Odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti dolores
-                            et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa.
-                            Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit
-                            libero, a pharetra augue laboris in sit minim cupidatat ut dolor voluptate enim veniam consequat
-                            occaecat fugiat in adipisicing in amet Ut nulla nisi non ut enim aliqua laborum mollit quis nostrud sed sed..</p>
 
-                            <h3>Smaller Heading</h3>
 
-                            <p>
-                            Quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est
-                            eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas
-                            assumenda est, omnis dolor repellendus.
-                            </p>
 
-                            <p>
-                            Quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est
-                            eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas
-                            assumenda est, omnis dolor repellendus.
-                            </p>
 
-<pre><code class="language-css">
-    code {
-        font-size: 1.4rem;
-        margin: 0 .2rem;
-        padding: .2rem .6rem;
-        white-space: nowrap;
-        background: #F1F1F1;
-        border: 1px solid #E1E1E1;
-        border-radius: 3px;
-    }
-</code></pre>
+<!--                            <p>-->
+<!--                            Odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti dolores et-->
+<!--                            quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa.</p>-->
 
-                            <p>
-                            Odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti dolores et
-                            quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa.</p>
+<!--                            <ul>-->
+<!--                                <li>Donec nulla non metus auctor fringilla.-->
+<!--                                    <ul>-->
+<!--                                        <li>Lorem ipsum dolor sit amet.</li>-->
+<!--                                        <li>Lorem ipsum dolor sit amet.</li>-->
+<!--                                        <li>Lorem ipsum dolor sit amet.</li>-->
+<!--                                    </ul>-->
+<!--                                </li>-->
+<!--                                <li>Donec nulla non metus auctor fringilla.</li>-->
+<!--                                <li>Donec nulla non metus auctor fringilla.</li>-->
+<!--                            </ul>-->
 
-                            <ul>
-                                <li>Donec nulla non metus auctor fringilla.
-                                    <ul>
-                                        <li>Lorem ipsum dolor sit amet.</li>
-                                        <li>Lorem ipsum dolor sit amet.</li>
-                                        <li>Lorem ipsum dolor sit amet.</li>
-                                    </ul>
-                                </li>
-                                <li>Donec nulla non metus auctor fringilla.</li>
-                                <li>Donec nulla non metus auctor fringilla.</li>
-                            </ul>
-
-                            <p>
-                            Odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti dolores et quas
-                            molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa. Aenean eu leo quam.
-                            Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue
-                            laboris in sit minim cupidatat ut dolor voluptate enim veniam consequat occaecat fugiat in adipisicing
-                            in amet Ut nulla nisi non ut enim aliqua laborum mollit quis nostrud sed sed.
-                            </p>
+<!--                            <p>-->
+<!--                            Odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti dolores et quas-->
+<!--                            molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa. Aenean eu leo quam.-->
+<!--                            Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue-->
+<!--                            laboris in sit minim cupidatat ut dolor voluptate enim veniam consequat occaecat fugiat in adipisicing-->
+<!--                            in amet Ut nulla nisi non ut enim aliqua laborum mollit quis nostrud sed sed.-->
+<!--                            </p>-->
 
                         </div> <!-- end s-entry__entry-content -->
 
                         <div class="s-content__entry-meta">
-
+                        <!--blog uploader for loop starts here-->
+                            {% for i,j in profile %}
                             <div class="entry-author meta-blk">
                                 <div class="author-avatar">
-                                    <img class="avatar" src="images/avatars/user-06.jpg" alt="">
+                                    <img class="avatar" src="/static/profile_pictures/{{i}}" alt="">
                                 </div>
                                 <div class="byline">
                                     <span class="bytext">Posted By</span>
-                                    <a href="#0">John Doe</a>
+                                    <a href="#0">{{j}}</a>
+                                    {% endfor %}
                                 </div>
+
+                                <!--blog uploader for loop ends here-->
                             </div>
 
-                            <div class="meta-bottom">
+<!--                            <div class="meta-bottom">-->
 
-                                <div class="entry-cat-links meta-blk">
-                                    <div class="cat-links">
-                                        <span>In</span>
-                                        <a href="#0">Frontend</a>
-                                        <a href="#0">Design</a>
-                                        <a href="#0">Work</a>
-                                    </div>
+<!--                                <div class="entry-cat-links meta-blk">-->
+<!--                                    <div class="cat-links">-->
+<!--                                        <span>In</span>-->
+<!--                                        <a href="#0">Frontend</a>-->
+<!--                                        <a href="#0">Design</a>-->
+<!--                                        <a href="#0">Work</a>-->
+<!--                                    </div>-->
 
-                                    <span>On</span>
-                                    Oct 5, 2020
-                                </div>
+<!--                                    <span>On</span>-->
+<!--                                    Oct 5, 2020-->
+<!--                                </div>-->
 
-                                <div class="entry-tags meta-blk">
-                                    <span class="tagtext">Tags</span>
-                                    <a href="#">orci</a>
-                                    <a href="#">lectus</a>
-                                    <a href="#">varius</a>
-                                    <a href="#">turpis</a>
-                                </div>
+<!--                                <div class="entry-tags meta-blk">-->
+<!--                                    <span class="tagtext">Tags</span>-->
+<!--                                    <a href="#">orci</a>-->
+<!--                                    <a href="#">lectus</a>-->
+<!--                                    <a href="#">varius</a>-->
+<!--                                    <a href="#">turpis</a>-->
+<!--                                </div>-->
 
-                            </div>
+<!--                            </div>-->
 
                         </div> <!-- s-content__entry-meta -->
 

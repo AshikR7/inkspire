@@ -8,8 +8,9 @@ urlpatterns=[
     path('profile/',userProfile),
     path('index/',index),
     path('blogupload/',blogUpload),
-    path('blogdisplay/<int:id>',blogDisplay),
-    path('proimageupload',profileImageUpload)
+    # path('blogdisplay/<int:id>',blogDisplay),
+    path('proimageupload',profileImageUpload),
+    path('singleblogdisplay/<int:id>',singleBlogDisplayView)
 
 
 ]
