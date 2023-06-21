@@ -159,25 +159,25 @@ def blogUpload(request):
         else:
             return HttpResponse("Upload Failed")
     return render(request,"blogUpload.html")
-def blogDisplay(request,id):
-    a = blogUploadModel.objects.filter(id=id)
-    # titleName = []
-    cover = []
-    video = []
-    # sumary = []
-    # subTitleFirst = []
-    # paraFirst =[]
-    # subTitleSecond = []
-    # paraSecond = []
-    # artistName = []
-    # id = []
-    for i in a:
-        c = i.image
-        cover.append(str(c).split('/')[-1])
-        g = i.video
-        video.append(str(g).split('/')[-1])
-    mylistVideoImage = zip(cover,video)
-    return render(request,'Display.html',{'mylist':a,'my':mylistVideoImage})
+# def blogDisplay(request,id):
+#     a = blogUploadModel.objects.filter(id=id)
+#     # titleName = []
+#     cover = []
+#     video = []
+#     # sumary = []
+#     # subTitleFirst = []
+#     # paraFirst =[]
+#     # subTitleSecond = []
+#     # paraSecond = []
+#     # artistName = []
+#     # id = []
+#     for i in a:
+#         c = i.image
+#         cover.append(str(c).split('/')[-1])
+#         g = i.video
+#         video.append(str(g).split('/')[-1])
+#     mylistVideoImage = zip(cover,video)
+#     return render(request,'Display.html',{'mylist':a,'my':mylistVideoImage})
 # def proImage(request):
 #     if request.method=='POST':
 #         a=profileImageForm(request.POST,request.FILES)
@@ -190,3 +190,26 @@ def blogDisplay(request,id):
 #         else:
 #             return HttpResponse("failed")
 #     return render(request,'uploadprofile.html')
+
+def singleBlogDisplayView(request,id):
+    a = blogUploadModel.objects.filter(id=id)
+    cover = []
+    video = []
+    for i in a:
+        c = i.image
+        cover.append(str(c).split('/')[-1])
+        g = i.video
+        video.append(str(g).split('/')[-1])
+        h=i.blogername
+    x = proImage.objects.filter(name=h)
+    pro = []
+    na = []
+    for i in x:
+        z = i.name
+        na.append(z)
+        b = i.proPic
+        pro.append(str(b).split('/')[-1])
+    profile = zip(pro, na)
+
+    mylistVideoImage = zip(cover, video)
+    return render(request,'blogDisplay.html',{'mylist':a,'my':mylistVideoImage,'profile':profile})
