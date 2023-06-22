@@ -14,14 +14,14 @@ class profile(models.Model):
 
 class blogUploadModel(models.Model):
     blogername=models.CharField(max_length=20)
-    mainTitleName=models.CharField(max_length=40)
+    mainTitleName=models.CharField(max_length=500)
     image=models.ImageField(upload_to='serverapp/static/blogImages')
     video=models.FileField(upload_to='serverapp/static/blogVideo',blank=True, null=True)
-    summary=models.CharField(max_length=100)
-    subTitleNameFirst=models.CharField(max_length=40,blank=True, null=True)
-    paragarphFirst=models.TextField(max_length=255,blank=True, null=True)
-    subTitleNameSecond= models.CharField(max_length=40, blank=True, null=True)
-    paragarphSecond=models.TextField(max_length=255,blank=True, null=True)
+    summary=models.CharField(max_length=5000)
+    subTitleNameFirst=models.CharField(max_length=500,blank=True, null=True)
+    paragarphFirst=models.CharField(max_length=5000,blank=True, null=True)
+    subTitleNameSecond= models.CharField(max_length=50, blank=True, null=True)
+    paragarphSecond=models.CharField(max_length=5000,blank=True, null=True)
 
 # class UserImage(models.Model):
 #     userPic= models.OneToOneField(User,on_delete=models.CASCADE)
