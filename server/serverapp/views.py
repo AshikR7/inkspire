@@ -97,18 +97,18 @@ def profileImageUpload(request):
     return render(request,'uploadprofile.html')
 
 
-def userProfile(request):
-    un=request.session['username']
-    a=proImage.objects.filter(name=un)
-    pro=[]
-    na=[]
-    for i in a:
-        z=i.name
-        na.append(z)
-        b = i.proPic
-        pro.append(str(b).split('/')[-1])
-    pi=zip(pro,na)
-    return render(request,'user_profile.html',{'username':un,'image':pi})
+# def userProfile(request):
+#     un=request.session['username']
+#     a=proImage.objects.filter(name=un)
+#     pro=[]
+#     na=[]
+#     for i in a:
+#         z=i.name
+#         na.append(z)
+#         b = i.proPic
+#         pro.append(str(b).split('/')[-1])
+#     pi=zip(pro,na)
+#     return render(request,'user_profile.html',{'username':un,'image':pi})
 def landingPage(request):
     return render(request,'landingPage.html')
 
@@ -214,3 +214,17 @@ def singleBlogDisplayView(request,id):
         pro.append(str(b).split('/')[-1])
     profile = zip(pro, na)
     return render(request,'blogDisplay.html',{'mylist':a,'my':mylistVideoImage,'profile':profile})
+def userProfileView(request):
+    un = request.session['username']
+    a = proImage.objects.filter(name=un)
+    pro = []
+    na = []
+    for i in a:
+        z = i.name
+        na.append(z)
+        b = i.proPic
+        pro.append(str(b).split('/')[-1])
+    pi = zip(pro, na)
+    return render(request,'profile.html',{'profile':pi})
+def card(request):
+    return render(request,'cards.html')

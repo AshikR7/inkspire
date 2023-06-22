@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <style>
+
+        @import url("https://fonts.googleapis.com/css?family=Maven+Pro|Oswald");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #0a1022;
+  padding: 0;
+  margin: 0;
+  color: #fff;
+  overflow: hidden;
+  font-family: "Maven Pro";
+}
+
+.main-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+}
+.main-container .left-sidebar {
+  flex-grow: 2;
+  max-width: 320px;
+  border-right: 1px solid #1a233d;
+  position: relative;
+  transition: all 0.5s;
+  box-shadow: 2px 0px 5px #03050a;
+}
+.main-container .left-sidebar .inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.main-container .left-sidebar .inner .user-profile {
+  flex-grow: 2;
+  max-height: 345px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.5s;
+  border: #1a233d;
+  position: relative;
+  overflow: hidden;
+}
+.main-container .left-sidebar .inner .user-profile .user-background {
+  position: absolute;
+  background: url("https://gravatar.com/avatar/de84db04b0c7b43efdc840391ffe56ff");
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  filter: blur(25px);
+  z-index: -1;
+}
+.main-container .left-sidebar .inner .user-profile .user-background::after {
+  display: block;
+  position: relative;
+  background-image: linear-gradient(to bottom, rgba(23, 32, 61, 0.3) 0, #0a1022 95%);
+  height: 100%;
+  width: 100%;
+  content: "";
+}
+.main-container .left-sidebar .inner .user-profile .user-image {
+  margin: 50px 0 25px 0;
+  border-color: #1a233d;
+  transition: all 0.5s;
+}
+.main-container .left-sidebar .inner .user-profile .user-image img {
+  width: 90px;
+  border-radius: 50%;
+  border: 6px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.5s;
+}
+.main-container .left-sidebar .inner .user-profile .user-info {
+  text-align: center;
+}
+.main-container .left-sidebar .inner .user-profile .user-info .user-name {
+  font-family: "Oswald";
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.main-container .left-sidebar .inner .user-profile .user-info .user-location {
+  color: #D1D3DA;
+}
+.main-container .left-sidebar .inner .user-profile .user-info .user-location i::before {
+  transform: rotate(180deg);
+  color: #556798;
+}
+.main-container .left-sidebar .inner .main-menu {
+  flex-grow: 5;
+}
+.main-container .left-sidebar .inner .social-links {
+  flex-grow: 1;
+  max-height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.main-container .left-sidebar .inner .social-links a {
+  padding: 0 10px;
+  color: #fff;
+  font-size: 1.3rem;
+}
+.main-container .left-sidebar.minimize {
+  max-width: 100px;
+}
+.main-container .left-sidebar.minimize .inner .user-profile {
+  border-bottom: 1px solid #1a233d;
+  max-height: 130px;
+}
+.main-container .left-sidebar.minimize .inner .user-profile .user-image {
+  margin: 25px 0;
+}
+.main-container .left-sidebar.minimize .inner .user-profile .user-image img {
+  width: 75px;
+}
+.main-container .left-sidebar.minimize .inner .user-profile .user-info {
+  height: 0px;
+  transition-delay: 0s;
+  animation: animate-sidebar-text 0.5s;
+}
+.main-container .left-sidebar.minimize .inner .social-links {
+  max-height: 200px;
+  flex-direction: column;
+}
+.main-container .left-sidebar.minimize .inner .social-links a {
+  padding: 10px 0;
+}
+.main-container .left-sidebar.minimize .toggle-button i::before {
+  transform: rotate(180deg);
+}
+.main-container .main-content {
+  flex-grow: 10;
+  display: flex;
+  justify-content: center;
+}
+.main-container .main-content > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+}
+.main-container .main-content .modal {
+  border: 1px solid #1a233d;
+  padding: 0 20px;
+  width: 50%;
+  border-radius: 25px;
+  display: none;
+}
+.main-container .main-content .modal.show {
+  display: inherit;
+}
+.main-container .main-content .modal .heading h2 {
+  font-size: 1.3rem;
+  padding: 10px 0;
+  letter-spacing: 0.1rem;
+  font-weight: 400;
+}
+.main-container .main-content .modal .heading h3 {
+  letter-spacing: -0.03rem;
+  font-family: "Oswald";
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+
+.container {
+  position: relative;
+  font-family: sans-serif;
+
+}
+
+
+
+.container::before {
+  border-radius: 50%;
+  width: 6rem;
+  height: 6rem;
+  top: 30%;
+  right: 7%;
+}
+
+
+
+.container .box {
+  width: 20em;
+  height: 25em;
+  padding: 1rem;
+  margin-left: 25px;
+  background-color: rgba(255, 255, 255, 0.074);
+  border: 1px solid rgb(255, 255, 255);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border-radius: .7rem;
+  transition: all ease .3s;
+}
+
+.container .box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.container .box .title {
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: .1em
+}
+
+.container .box div strong {
+  display: block;
+  margin-bottom: .5rem;
+}
+
+.container .box div p {
+  margin: 0;
+  font-size: .9em;
+  font-weight: 300;
+  letter-spacing: .1em;
+}
+
+.container .box div span {
+  font-size: .7rem;
+  font-weight: 300;
+}
+
+.container .box div span:nth-child(3) {
+  font-weight: 500;
+  margin-right: .2rem;
+}
+
+.container .box:hover {
+  box-shadow: 0px 0px 20px 1px #001aff3f;
+  border: 1px solid rgba(255, 255, 255, 0.454);
+}
+
+
+
+    </style>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+<div class="main-container">
+  <div class="left-sidebar">
+    <div class="inner">
+      <div class="user-profile">
+        <div class="user-background"></div>
+
+        {% for i,j in profile %}
+        <div class="user-image">
+          <img src="/static/profile_pictures/{{i}}">
+        </div>
+        <div class="user-info">
+          <p class="user-name">{{j}}</p>
+          <p class="user-title">Front End Developer</p>
+          <p class="user-location">
+            <i class="icon ion-md-locate"></i> Malta
+          </p>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="main-menu"></div>
+      <div class="social-links">
+        <a href="#"><i class="icon ion-logo-facebook"></i></a>
+        <a href="#"><i class="icon ion-logo-twitter"></i></a>
+        <a href="#"><i class="icon ion-logo-instagram"></i></a>
+      </div>
+    </div>
+
+  </div>
+  <div class="main-content">
+
+<div class="container">
+    <div class="box">
+        <span class="title">1st</span>
+        <div>
+            <strong>JOE WATSON SBF</strong>
+            <p>0000 000 000 0000</p>
+            <span>VALID</span> <span>01/28</span>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="box">
+        <span class="title">2nd</span>
+        <div>
+            <strong>JOE WATSON SBF</strong>
+            <p>0000 000 000 0000</p>
+            <span>VALID</span> <span>01/28</span>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="box">
+        <span class="title">3rd</span>
+        <div>
+            <strong>JOE WATSON SBF</strong>
+            <p>0000 000 000 0000</p>
+            <span>VALID</span> <span>01/28</span>
+        </div>
+    </div>
+</div>
+
+
+
+
+  </div>
+  <div class="right-sidebar">
+    <div class="btn open-music-btn"><i class="icon ion-md-musical-notes"></i></div>
+    <div class="btn open-timer-btn"><i class="icon ion-md-timer"></i></div>
+    <div class="btn open-chat-btn"><i class="icon ion-md-chatbubbles"></i></div>
+  </div>
+</div>
+
+
+
+
+
+</body>
+</html>
