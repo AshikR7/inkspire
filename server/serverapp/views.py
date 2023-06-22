@@ -88,7 +88,9 @@ def profileImageUpload(request):
     if request.method == 'POST':
         un = request.session['username']
         a = proImageForm(request.POST, request.FILES)
-        if a.is_valid():
+        if proImage.objects.filter(name=un).exists():
+            return HttpResponse("already added")
+        elif a.is_valid():
             img = a.cleaned_data['proPic']
             b=proImage(proPic=img,name=un)
             b.save()
@@ -201,6 +203,7 @@ def singleBlogDisplayView(request,id):
         g = i.video
         video.append(str(g).split('/')[-1])
         h=i.blogername
+    mylistVideoImage = zip(cover, video)
     x = proImage.objects.filter(name=h)
     pro = []
     na = []
@@ -210,6 +213,4 @@ def singleBlogDisplayView(request,id):
         b = i.proPic
         pro.append(str(b).split('/')[-1])
     profile = zip(pro, na)
-
-    mylistVideoImage = zip(cover, video)
     return render(request,'blogDisplay.html',{'mylist':a,'my':mylistVideoImage,'profile':profile})

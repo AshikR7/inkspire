@@ -6,7 +6,9 @@
     <!--- basic page needs
     ================================================== -->
     <meta charset="utf-8">
-    <title>Calvin</title>
+    {% for i in mylist %}
+    <title>{{i.mainTitleName}}</title>
+    {% endfor %}
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -119,13 +121,14 @@
 <!--        <a class="s-header__search-trigger" href="#">-->
 <!--            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.982 17.983"><path fill="#010101" d="M12.622 13.611l-.209.163A7.607 7.607 0 017.7 15.399C3.454 15.399 0 11.945 0 7.7 0 3.454 3.454 0 7.7 0c4.245 0 7.699 3.454 7.699 7.7a7.613 7.613 0 01-1.626 4.714l-.163.209 4.372 4.371-.989.989-4.371-4.372zM7.7 1.399a6.307 6.307 0 00-6.3 6.3A6.307 6.307 0 007.7 14c3.473 0 6.3-2.827 6.3-6.3a6.308 6.308 0 00-6.3-6.301z"/></svg>-->
 <!--        </a>-->
-
-                      <li style="margin-top:-160px">
-                        {% for i,j in image %}
-                            <h1 style="color:blue">{{j}}</h1>
-                            <img src="/static/profile_pictures/{{i}}" alt="" style="width:60px;height:60px;border-radius: 100%;">
-                            {% endfor %}
-                    </li>
+                <!--nav bar profile pic starts here-->
+<!--                      <li style="margin-top:-160px">-->
+<!--                        {% for i,j in image %}-->
+<!--                            <h1 style="color:blue">{{j}}</h1>-->
+<!--                            <img src="/static/profile_pictures/{{i}}" alt="" style="width:60px;height:60px;border-radius: 100%;">-->
+<!--                            {% endfor %}-->
+<!--                    </li>-->
+                    <!--nav bar profile pic ends here-->
 
     </header> <!-- end s-header -->
 
