@@ -11,7 +11,10 @@ urlpatterns=[
     path('proimageupload',profileImageUpload),
     path('singleblogdisplay/<int:id>',singleBlogDisplayView),
     path('userprofile/',userProfileView),
-    path('cards',card)
+    path('bloglist/',blogList.as_view(),name='bloglist'),
+    path('deletelist/',deleteList.as_view(),name='deletelist'),
+    path('deleteblog/<pk>',blogDelete.as_view(),name='deleteblog')
+
 
 
 ]
