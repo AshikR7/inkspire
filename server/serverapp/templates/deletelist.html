@@ -50,16 +50,14 @@
   <tr>
     <th>bloger name</th>
     <th>Title</th>
-<!--    <th>Phone</th>-->
-<!--    <th>Date of birth</th>-->
-<!--    <th>Delete</th>-->
-<!--    <th>View</th>-->
-<!--    <th>Update</th>-->
+    <th>Delete</th>
+
   </tr>
   {% for i in a %}
   <tr>
     <td>{{i.blogername}}</td>
     <td>{{i.mainTitleName}}</td>
+    <td><a href="http://127.0.0.1:8000/inkspire/deleteblog/{{i.id}}">Delete</a></td>
   </tr>
   {% endfor %}
 </table>

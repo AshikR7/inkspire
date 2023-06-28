@@ -10,6 +10,8 @@ import os
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 from server.settings import EMAIL_HOST_USER
+from django.urls import reverse_lazy
+from django.views import generic
 # Create your views here
 def signUpView(request):
     if request.method=='POST':
@@ -226,5 +228,23 @@ def userProfileView(request):
         pro.append(str(b).split('/')[-1])
     pi = zip(pro, na)
     return render(request,'profile.html',{'profile':pi})
-def card(request):
-    return render(request,'cards.html')
+class blogList(generic.ListView):
+    model = blogUploadModel
+    template_name = 'Display.html'
+    def get(self,request):
+        un = request.session['username']
+        a = self.model.objects.filter(blogername=un)
+        return render(request,self.template_name,{'a':a})
+
+class deleteList(generic.ListView):
+    model = blogUploadModel
+    template_name = 'deletelist.html'
+    def get(self,request):
+        un = request.session['username']
+        a = self.model.objects.filter(blogername=un)
+        return render(request,self.template_name,{'a':a})
+
+class blogDelete(generic.DeleteView):
+    model = blogUploadModel
+    template_name = 'conformdelete.html'
+    success_url = reverse_lazy('deletelist')
