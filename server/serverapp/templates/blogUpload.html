@@ -1,28 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+        body {
+  background-image: url('https://img.freepik.com/free-vector/abstract-white-shapes-background_79603-1362.jpg?w=1060&t=st=1688050988~exp=1688051588~hmac=27c4f80d33b837ada415fd4446eb457a5c7cda2423abab863ed3bb85ca4c19e0');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+   }
+   .center {
+  margin-left: auto;
+  margin-right: auto;
+}
+.story{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+}
+th{
+height:45px;
+}
+table {
+  border: 1px solid;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700");
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  color: #111111;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.container {
+  width: auto;
+  margin: auto;
+}
+
+@-webkit-keyframes topAnimation {
+  from {
+    transform: translate(0rem, 0);
+  }
+  to {
+    transform: translate(0rem, 3.5rem);
+  }
+}
+
+@keyframes topAnimation {
+  from {
+    transform: translate(0rem, 0);
+  }
+  to {
+    transform: translate(0rem, 3.5rem);
+  }
+}
+@-webkit-keyframes bottomAnimation {
+  from {
+    transform: translate(-11.5rem, 0);
+  }
+  to {
+    transform: translate(0rem, 0);
+  }
+}
+@keyframes bottomAnimation {
+  from {
+    transform: translate(-11.5rem, 0);
+  }
+  to {
+    transform: translate(0rem, 0);
+  }
+}
+button.btn {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 700;
+  border: 0;
+  position: relative;
+  letter-spacing: 0.15em;
+  margin: 0 auto;
+  padding: 1rem 2.5rem;
+  background: transparent;
+  outline: none;
+  font-size: 28px;
+  color: #111111;
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.15s;
+}
+button.btn::after, button.btn::before {
+  border: 0;
+  content: "";
+  position: absolute;
+  height: 40%;
+  width: 10%;
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: -2;
+  border-radius: 50%;
+}
+button.btn::before {
+  border: 0;
+  background-color: #c92918;
+  top: -0.75rem;
+  left: 0.5rem;
+  -webkit-animation: topAnimation 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.25s infinite alternate;
+          animation: topAnimation 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.25s infinite alternate;
+}
+button.btn::after {
+  background-color: #e74c3c;
+  top: 3rem;
+  left: 13rem;
+  -webkit-animation: bottomAnimation 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s infinite alternate;
+          animation: bottomAnimation 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s infinite alternate;
+}
+button.btn:hover {
+  color: white;
+}
+button.btn:hover::before, button.btn:hover::after {
+  top: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 0;
+  -webkit-animation: none;
+          animation: none;
+}
+button.btn:hover::after {
+  left: 0rem;
+}
+button.btn:hover::before {
+  top: 0.5rem;
+  left: 0.35rem;
+}
+
+
+
+
+    </style>
     <meta charset="UTF-8">
     <title>Blog Upload</title>
 </head>
-<body>
+<body >
 <form method="post" enctype="multipart/form-data">{% csrf_token %}
-          <label >Enter Ttile</label>
-          <input type="text" name="mainTitleName"/><br>
-          <label >Cover Photo</label>
-          <input type="file" name="image"/><br>
-          <label >Video</label>
-          <input type="file" name="video"/><br>
-          <label >Summary</label>
-          <textarea name="summary" rows="4" cols="50"></textarea><br>
-          <label > First Sub header </label>
-          <input type="text" name="subTitleNameFirst"/><br>
-            <label >Enter </label>
-          <textarea name="paragarphFirst" rows="4" cols="50"></textarea><br>
-            <label > Second Sub header </label>
-          <input type="text" name="subTitleNameSecond"/><br>
-            <label >Enter </label>
-          <textarea name="paragarphSecond" rows="4" cols="50"></textarea><br>
-          <button type="submit">Upload</button>
+
+    <div class="story" style="margin-top:3%">
+         <h1>Share Your Story!</h1>
+    </div>
+    <table class="center" style="margin-top:1%">
+        <tr>
+            <th>Enter Ttile</th>
+            <td><input type="text" name="mainTitleName"/></td>
+        </tr>
+        <tr>
+            <th>Cover Photo</th>
+            <td><input type="file" name="image"/></td>
+        </tr>
+        <tr>
+            <th>Video</th>
+            <td><input type="file" name="video"/></td>
+        </tr>
+        <tr>
+            <th>Summary</th>
+            <td><textarea name="summary" rows="4" cols="50"></textarea></td>
+        </tr>
+        <tr>
+            <th>First Sub header</th>
+            <td><input type="text" name="subTitleNameFirst"/></td>
+        </tr>
+        <tr>
+            <th>Enter</th>
+            <td><textarea name="paragarphFirst" rows="4" cols="50"></textarea></td>
+        </tr>
+        <tr>
+            <th>Second Sub header</th>
+            <td><input type="text" name="subTitleNameSecond"/></td>
+        </tr>
+        <tr>
+            <th>Enter</th>
+            <td><textarea name="paragarphSecond" rows="4" cols="50"></textarea></td>
+        </tr>
+
+    </table>
+
+    <div class="container" style="margin-left:25%;margin-top:3%">
+      <button class="btn" type="submit">Upload</button>
+    </div>
       </form>
 
 </body>
