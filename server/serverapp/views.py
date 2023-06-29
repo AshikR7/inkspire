@@ -236,7 +236,6 @@ class blogList(generic.ListView):
         a = self.model.objects.filter(blogername=un)
         titleName = []
         cover = []
-        # sumary = []
         artistName = []
         id = []
         for i in a:
@@ -258,7 +257,22 @@ class deleteList(generic.ListView):
     def get(self,request):
         un = request.session['username']
         a = self.model.objects.filter(blogername=un)
-        return render(request,self.template_name,{'a':a})
+        titleName = []
+        cover = []
+        artistName = []
+        id = []
+        for i in a:
+            b = i.mainTitleName
+            titleName.append(b)
+            c = i.image
+            cover.append(str(c).split('/')[-1])
+
+            e = i.blogername
+            artistName.append(e)
+            d = i.id
+            id.append(d)
+        mylist = zip(titleName, cover, artistName, id)
+        return render(request, self.template_name, {'mylist': mylist})
 
 class blogDelete(generic.DeleteView):
     model = blogUploadModel
