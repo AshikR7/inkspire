@@ -1,68 +1,174 @@
 <!DOCTYPE html>
 {% load static %}
-<html lang="en">
+<html class="no-js" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Inkspire</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="{% static '/css/vendor.css' %}">
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+
+    <!-- script
+    ================================================== -->
+    <script src="{% static '/js/modernizr.js' %}" ></script>
+    <script defer src="{% static 'js/fontawesome/all.min.js' %}"></script>
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+
 </head>
-<body>
 
-<!--{% for i in mylist %}-->
+<body id="top">
 
-<!--<p>{{i.mainTitleName}}</p>-->
-<!--<p>{{i.summary}}</p>-->
-<!--<p>{{i.blogername}}</p>-->
-<!--<p>{{i.id}}</p>-->
-<!--<p>{{i.subTitleNameFirst}}</p>-->
-<!--<p>{{i.paragarphFirst}}</p>-->
-<!--<p>{{i.subTitleNameSecond}}</p>-->
-<!--<p>{{i.paragarphSecond}}</p>-->
-<!--{% for i,j in my %}-->
-<!--<img src="/static/blogImages/{{i}}"  width="100" height="100">-->
-<!--{% for i in mylist %}-->
-<!--<p>{{i.mainTitleName}}</p>-->
-<!--{%  endfor %}-->
-<!--<video width="320" height="240" controls>-->
-<!--  <source src="/static/blogVideo/{{j}}">-->
-<!--</video>-->
-<!--{%  endfor %}-->
-<!--{% endfor %}-->
+
+    <!-- preloader
+    ================================================== -->
+<!--    <div id="preloader">-->
+<!--    	<div id="loader"></div>-->
+<!--    </div>-->
 
 
 
+    <!-- content
+    ================================================== -->
+    <section class="s-content s-content--no-top-padding">
 
 
-<!--{% for i,j in my %}-->
+        <!-- masonry
+        ================================================== -->
+        <div class="s-bricks">
 
-<!--<img src="/static/blogImages/{{i}}"  width="100" height="100">-->
-<!--<video width="320" height="240" controls>-->
-<!--  <source src="/static/blogVideo/{{j}}">-->
-<!--</video>-->
-<!--{%  endfor %}-->
-<!--{% for i in mylist %}-->
-<!--<p>{{i.mainTitleName}}</p>-->
-<!--<p>{{i.summary}}</p>-->
-<!--<p>{{i.blogername}}</p>-->
+            <div class="masonry">
+                <div class="bricks-wrapper h-group">
 
-<!--{% endfor %}-->
+                    <div class="grid-sizer"></div>
 
-<table border="1">
-  <tr>
-    <th>bloger name</th>
-    <th>Title</th>
-<!--    <th>Phone</th>-->
-<!--    <th>Date of birth</th>-->
-<!--    <th>Delete</th>-->
-<!--    <th>View</th>-->
-<!--    <th>Update</th>-->
-  </tr>
-  {% for i in a %}
-  <tr>
-    <td>{{i.blogername}}</td>
-    <td>{{i.mainTitleName}}</td>
-  </tr>
-  {% endfor %}
-</table>
+                    <div class="lines">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                  <div class="row">
+                    {% for i,j,k,l in mylist %}
+                    <article class="brick entry" data-aos="fade-up">
+
+                        <div class="entry__thumb">
+                            <a href="http://127.0.0.1:8000/inkspire/singleblogdisplay/{{l}}"   class="thumb-link">
+                                <img src="/static/blogImages/{{j}}"
+                                       alt="">
+                            </a>
+                        </div> <!-- end entry__thumb -->
+
+                        <div class="entry__text">
+                            <div class="entry__header">
+                                <h1 class="entry__title"><a >{{i}}</a></h1>
+
+                                <div class="entry__meta">
+                                    <span class="byline">By:
+                                        <span class='author'>
+                                            <a href="">{{k}}</a>
+                                    </span>
+                                </span>
+<!--                                    <span class="cat-links">-->
+<!--                                        <a href="https://www.youtube.com/watch?v=bdE_SyHad90">{{m}}</a>-->
+<!--                                    </span>-->
+                                </div>
+                            </div>
+<!--                            <div class="entry__excerpt">-->
+<!--                                <p>-->
+<!--                                 {{k}}-->
+<!--                                </p>-->
+<!--                            </div>-->
+                            <a class="entry__more-link" href="http://127.0.0.1:8000/inkspire/singleblogdisplay/{{l}}" >Read More</a>
+                        </div> <!-- end entry__text -->
+
+                    </article> <!-- end article -->
+                    {% endfor %}
+                </div>
+
+
+                </div> <!-- end brick-wrapper -->
+
+
+
+
+<!--  new table-->
+
+<!--              <table border="1">-->
+<!--              <tr>-->
+<!--              <th>bloger name</th>-->
+<!--                 <th>Title</th>-->
+
+<!--                   </tr>-->
+<!--                 {% for i in a %}-->
+<!--                <tr>-->
+<!--                  <td>{{i.blogername}}</td>-->
+<!--                  <td>{{i.mainTitleName}}</td>-->
+<!--                </tr>-->
+<!--                {% endfor %}-->
+<!--              </table>-->
+
+            </div> <!-- end masonry -->
+
+
+            <div class="row">
+                <div class="column large-12">
+                    <nav class="pgn">
+                        <ul>
+                            <li>
+                                <span class="pgn__prev" href="#0">
+                                    Prev
+                                </span>
+                            </li>
+                            <li><a class="pgn__num" href="#0">1</a></li>
+                            <li><span class="pgn__num current">2</span></li>
+                            <li><a class="pgn__num" href="#0">3</a></li>
+                            <li><a class="pgn__num" href="#0">4</a></li>
+                            <li><a class="pgn__num" href="#0">5</a></li>
+                            <li><span class="pgn__num dots">…</span></li>
+                            <li><a class="pgn__num" href="#0">8</a></li>
+                            <li>
+                                <span class="pgn__next" href="#0">
+                                    Next
+                                </span>
+                            </li>
+                        </ul>
+                    </nav> <!-- end pgn -->
+                </div> <!-- end column -->
+            </div> <!-- end row -->
+
+        </div> <!-- end s-bricks -->
+
+    </section> <!-- end s-content -->
+
+
+    <!-- Java Script
+    ================================================== -->
+
+    <script src="{% static 'js/jquery-3.5.0.min.js' %}"></script>
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+
+
 
 </body>
+
 </html>
+
+
+
