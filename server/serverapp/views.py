@@ -278,3 +278,4 @@ class blogDelete(generic.DeleteView):
     model = blogUploadModel
     template_name = 'conformdelete.html'
     success_url = reverse_lazy('deletelist')
+
