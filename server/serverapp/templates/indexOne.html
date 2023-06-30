@@ -48,7 +48,7 @@
     <header class="s-header">
 
         <div class="s-header__logo">
-            <a class="logo" href="http://127.0.0.1:8000/inkspire/index/">
+            <a class="logo" href="/inkspire/index/">
                 <img src="{% static 'parallax/logo main.png' %}" style="height: 50px;width: 50px;margin-left:220%">
             </a>
         </div>
@@ -60,20 +60,20 @@
                 <h3 class="s-header__nav-heading h6">Navigate to</h3>
 
                 <ul class="s-header__nav">
-                    <li class="current"><a href="http://127.0.0.1:8000/inkspire/index/" title="">Home</a></li>
+                    <li class="current"><a href="/inkspire/index/" title="">Home</a></li>
                     <li class="has-children">
                         <a href="#0" title="">Profile</a>
                         <ul class="sub-menu">
-                            <li><a href="http://127.0.0.1:8000/inkspire/userprofile/">Account</a></li>
-                            <li><a href="http://127.0.0.1:8000/inkspire/proimageupload">Upload Photo</a></li>
+                            <li><a href="/inkspire/userprofile/">Account</a></li>
+                            <li><a href="/inkspire/proimageupload">Upload Photo</a></li>
 
 
                         </ul>
                     </li>
-                    <li><a href="http://127.0.0.1:8000/inkspire/blogupload/">Create Story</a></li>
-                    <li><a href="http://127.0.0.1:8000/inkspire/bloglist/" title="">Your Stories</a></li>
+                    <li><a href="/inkspire/blogupload/">Create Story</a></li>
+                    <li><a href="/inkspire/bloglist/" title="">Your Stories</a></li>
 
-                    <li><a href="http://127.0.0.1:8000/inkspire/logout/" title="">Logout</a></li>
+                    <li><a href="/inkspire/logout/" title="">Logout</a></li>
                 </ul> <!-- end s-header__nav -->
 
 
@@ -112,7 +112,7 @@
                       <li style="margin-top:-160px">
                         {% for i,j in image %}
                             <h1 style="color:blue">{{j}}</h1>
-                          <a href="http://127.0.0.1:8000/inkspire/userprofile/"><img src="/static/profile_pictures/{{i}}" alt="" style="width:60px;height:60px;border-radius: 100%;"></a>
+                          <a href="/inkspire/userprofile/"><img src="/static/profile_pictures/{{i}}" alt="" style="width:60px;height:60px;border-radius: 100%;"></a>
                             {% endfor %}
                     </li>
 
@@ -187,18 +187,7 @@
 
                 <div class="row s-hero__slide-content animate-this">
                     <div class="column">
-<!--                        <div class="s-hero__slide-meta">-->
-<!--                            <span class="cat-links">-->
-<!--                                <a href="#0">Health</a>-->
-<!--                                <a href="#0">Lifestyle</a>-->
-<!--                            </span>-->
-<!--                            <span class="byline">-->
-<!--                                Posted by-->
-<!--                                <span class="author">-->
-<!--                                    <a href="#0">Jane Doe</a>-->
-<!--                                </span>-->
-<!--                            </span>-->
-<!--                        </div>-->
+
                         <h1 class="s-hero__slide-text">
                             <a href="#0">
                                 Transform Your Thoughts Into Masterpieces
@@ -258,7 +247,7 @@
                     <article class="brick entry" data-aos="fade-up">
 
                         <div class="entry__thumb">
-                            <a href="http://127.0.0.1:8000/inkspire/singleblogdisplay/{{m}}"   class="thumb-link">
+                            <a href="/inkspire/singleblogdisplay/{{m}}"   class="thumb-link">
                                 <img src="/static/blogImages/{{j}}"
                                        alt="">
                             </a>
@@ -284,7 +273,7 @@
                                  {{k}}
                                 </p>
                             </div>
-                            <a class="entry__more-link" href="http://127.0.0.1:8000/inkspire/singleblogdisplay/{{m}}" >Read More</a>
+                            <a class="entry__more-link" href="/inkspire/singleblogdisplay/{{m}}" >Read More</a>
                         </div> <!-- end entry__text -->
 
                     </article> <!-- end article -->

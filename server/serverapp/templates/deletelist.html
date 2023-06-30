@@ -47,7 +47,7 @@
     <header class="s-header">
 
         <div class="s-header__logo">
-            <a class="logo" href="http://127.0.0.1:8000/inkspire/index/">
+            <a class="logo" href="/inkspire/index/">
                 <img src="{% static 'parallax/logo main.png' %}" style="height: 50px;width: 50px;margin-left:125%">
             </a>
         </div>
@@ -59,14 +59,14 @@
                 <h3 class="s-header__nav-heading h6">Navigate to</h3>
 
                 <ul class="s-header__nav">
-                    <li class="current"><a href="http://127.0.0.1:8000/inkspire/index/" title="" style="color:black">Home</a></li>
+                    <li class="current"><a href="/inkspire/index/" title="" style="color:black">Home</a></li>
                     <li class="has-children">
                         <a href="#0" title="" style="color:black">Categories</a>
                         <ul class="sub-menu">
                             <li><a href=""  >Design</a></li>
-                            <li><a href="http://127.0.0.1:8000/inkspire/userprofile/">profile</a></li>
-                            <li><a href="http://127.0.0.1:8000/inkspire/blogupload/">upload</a></li>
-                            <li><a href="http://127.0.0.1:8000/inkspire/proimageupload">ProPic</a></li>
+                            <li><a href="/inkspire/userprofile/">profile</a></li>
+                            <li><a href="/inkspire/blogupload/">upload</a></li>
+                            <li><a href="/inkspire/proimageupload">ProPic</a></li>
                             <li><a href="category.html">Work</a></li>
                             <li><a href="category.html">Health</a></li>
                             <li><a href="category.html">Family</a></li>
@@ -180,12 +180,8 @@
 <!--                                    </span>-->
                                 </div>
                             </div>
-<!--                            <div class="entry__excerpt">-->
-<!--                                <p>-->
-<!--                                 {{k}}-->
-<!--                                </p>-->
-<!--                            </div>-->
-                            <a class="entry__more-link" href="http://127.0.0.1:8000/inkspire/deleteblog/{{l}}" style="font-size: 15px;">Delete</a>
+
+                            <a class="entry__more-link" href="/inkspire/deleteblog/{{l}}" style="font-size: 15px;">Delete</a>
                         </div> <!-- end entry__text -->
 
                     </article> <!-- end article -->
@@ -198,21 +194,6 @@
 
 
 
-<!--  new table-->
-
-<!--              <table border="1">-->
-<!--              <tr>-->
-<!--              <th>bloger name</th>-->
-<!--                 <th>Title</th>-->
-
-<!--                   </tr>-->
-<!--                 {% for i in a %}-->
-<!--                <tr>-->
-<!--                  <td>{{i.blogername}}</td>-->
-<!--                  <td>{{i.mainTitleName}}</td>-->
-<!--                </tr>-->
-<!--                {% endfor %}-->
-<!--              </table>-->
 
             </div> <!-- end masonry -->
 
