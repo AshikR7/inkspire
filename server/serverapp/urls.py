@@ -13,7 +13,8 @@ urlpatterns=[
     path('userprofile/',userProfileView),
     path('bloglist/',blogList.as_view(),name='bloglist'),
     path('deletelist/',deleteList.as_view(),name='deletelist'),
-    path('deleteblog/<pk>',blogDelete.as_view(),name='deleteblog')
+    path('deleteblog/<pk>',blogDelete.as_view(),name='deleteblog'),
+    path('logout/',logout_view)
 
 
 

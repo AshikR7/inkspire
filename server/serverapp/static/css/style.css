@@ -4816,7 +4816,9 @@ body.search-is-visible {
     font-size: var(--text-sm);
     line-height: calc(0.8125 * var(--space));
     color: var(--color-gray-14);
+
 }
+
 
 .s-footer .row {
     max-width: 1400px;
@@ -4851,6 +4853,7 @@ body.search-is-visible {
  * ------------------------------------------------------------------- */
 .s-footer__main {
     padding-bottom: var(--vspace-0_5);
+
 }
 
 .s-footer__main ul li {

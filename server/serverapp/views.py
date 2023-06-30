@@ -12,6 +12,7 @@ from django.contrib.auth import authenticate
 from server.settings import EMAIL_HOST_USER
 from django.urls import reverse_lazy
 from django.views import generic
+from django.contrib.auth import logout
 # Create your views here
 def signUpView(request):
     if request.method=='POST':
@@ -278,4 +279,8 @@ class blogDelete(generic.DeleteView):
     model = blogUploadModel
     template_name = 'conformdelete.html'
     success_url = reverse_lazy('deletelist')
+
+def logout_view(request):
+    logout(request)
+    return redirect(landingPage)
 
