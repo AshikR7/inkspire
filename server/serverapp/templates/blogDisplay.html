@@ -49,9 +49,9 @@
     ================================================== -->
     <header class="s-header s-header--opaque">
 
-        <div class="s-header__logo">
-            <a class="logo" href="index.html">
-                <img src="images/logo.svg" alt="Homepage">
+       <div class="s-header__logo">
+            <a class="logo" href="http://127.0.0.1:8000/inkspire/index/">
+                <img src="{% static 'parallax/logo main.png' %}" style="height: 50px;width: 50px;margin-left:1200%">
             </a>
         </div>
 
@@ -61,32 +61,21 @@
 
                 <h3 class="s-header__nav-heading h6">Navigate to</h3>
 
-               <ul class="s-header__nav">
+                <ul class="s-header__nav">
                     <li class="current"><a href="http://127.0.0.1:8000/inkspire/index/" title="">Home</a></li>
                     <li class="has-children">
-                        <a href="#0" title="">Categories</a>
+                        <a href="#0" title="">Profile</a>
                         <ul class="sub-menu">
-                            <li><a href="">Design</a></li>
-                            <li><a href="http://127.0.0.1:8000/inkspire/userprofile/">profile</a></li>
-                            <li><a href="http://127.0.0.1:8000/inkspire/blogupload/">upload</a></li>
-                            <li><a href="http://127.0.0.1:8000/inkspire/proimageupload">ProPic</a></li>
-                            <li><a href="category.html">Work</a></li>
-                            <li><a href="category.html">Health</a></li>
-                            <li><a href="category.html">Family</a></li>
-                            <li><a href="category.html">Relationship</a></li>
+                            <li><a href="http://127.0.0.1:8000/inkspire/userprofile/">Account</a></li>
+                            <li><a href="http://127.0.0.1:8000/inkspire/proimageupload">Upload Photo</a></li>
+
+
                         </ul>
                     </li>
-                    <li class="has-children">
-                        <a href="#0" title="">Blog</a>
-                        <ul class="sub-menu">
-                            <li><a href="single-video.html">Video Post</a></li>
-                            <li><a href="single-audio.html">Audio Post</a></li>
-                            <li><a href="single-standard.html">Standard Post</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="styles.html" title="">Profile</a></li>
-                    <li><a href="about.html" title="">Upload</a></li>
-                    <li><a href="contact.html" title="">Contact</a></li>
+                    <li><a href="http://127.0.0.1:8000/inkspire/blogupload/">Create Story</a></li>
+                    <li><a href="http://127.0.0.1:8000/inkspire/bloglist/" title="">Your Stories</a></li>
+
+                    <li><a href="http://127.0.0.1:8000/inkspire/logout/" title="">Logout</a></li>
                 </ul> <!-- end s-header__nav -->
 
 
@@ -118,17 +107,6 @@
 
         </div> <!-- end s-header__search wrap -->
 
-<!--        <a class="s-header__search-trigger" href="#">-->
-<!--            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.982 17.983"><path fill="#010101" d="M12.622 13.611l-.209.163A7.607 7.607 0 017.7 15.399C3.454 15.399 0 11.945 0 7.7 0 3.454 3.454 0 7.7 0c4.245 0 7.699 3.454 7.699 7.7a7.613 7.613 0 01-1.626 4.714l-.163.209 4.372 4.371-.989.989-4.371-4.372zM7.7 1.399a6.307 6.307 0 00-6.3 6.3A6.307 6.307 0 007.7 14c3.473 0 6.3-2.827 6.3-6.3a6.308 6.308 0 00-6.3-6.301z"/></svg>-->
-<!--        </a>-->
-                <!--nav bar profile pic starts here-->
-<!--                      <li style="margin-top:-160px">-->
-<!--                        {% for i,j in image %}-->
-<!--                            <h1 style="color:blue">{{j}}</h1>-->
-<!--                            <img src="/static/profile_pictures/{{i}}" alt="" style="width:60px;height:60px;border-radius: 100%;">-->
-<!--                            {% endfor %}-->
-<!--                    </li>-->
-                    <!--nav bar profile pic ends here-->
 
     </header> <!-- end s-header -->
 
@@ -234,29 +212,7 @@
                                 <!--blog uploader for loop ends here-->
                             </div>
 
-<!--                            <div class="meta-bottom">-->
 
-<!--                                <div class="entry-cat-links meta-blk">-->
-<!--                                    <div class="cat-links">-->
-<!--                                        <span>In</span>-->
-<!--                                        <a href="#0">Frontend</a>-->
-<!--                                        <a href="#0">Design</a>-->
-<!--                                        <a href="#0">Work</a>-->
-<!--                                    </div>-->
-
-<!--                                    <span>On</span>-->
-<!--                                    Oct 5, 2020-->
-<!--                                </div>-->
-
-<!--                                <div class="entry-tags meta-blk">-->
-<!--                                    <span class="tagtext">Tags</span>-->
-<!--                                    <a href="#">orci</a>-->
-<!--                                    <a href="#">lectus</a>-->
-<!--                                    <a href="#">varius</a>-->
-<!--                                    <a href="#">turpis</a>-->
-<!--                                </div>-->
-
-<!--                            </div>-->
 
                         </div> <!-- s-content__entry-meta -->
 
@@ -282,215 +238,7 @@
         </div> <!-- end row -->
 
 
-        <!-- comments
-        ================================================== -->
-<!--        <div class="comments-wrap">-->
 
-<!--            <div id="comments" class="row">-->
-<!--                <div class="column large-12">-->
-
-<!--                    <h3>5 Comments</h3>-->
-
-<!--                    &lt;!&ndash; START commentlist &ndash;&gt;-->
-<!--                    <ol class="commentlist">-->
-
-<!--                        <li class="depth-1 comment">-->
-
-<!--                            <div class="comment__avatar">-->
-<!--                                <img class="avatar" src="images/avatars/user-01.jpg" alt="" width="50" height="50">-->
-<!--                            </div>-->
-
-<!--                            <div class="comment__content">-->
-
-<!--                                <div class="comment__info">-->
-<!--                                    <div class="comment__author">Itachi Uchiha</div>-->
-
-<!--                                    <div class="comment__meta">-->
-<!--                                        <div class="comment__time">Oct 05, 2020</div>-->
-<!--                                        <div class="comment__reply">-->
-<!--                                            <a class="comment-reply-link" href="#0">Reply</a>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-
-<!--                                <div class="comment__text">-->
-<!--                                <p>Adhuc quaerendum est ne, vis ut harum tantas noluisse, id suas iisque mei. Nec te inani ponderum vulputate,-->
-<!--                                facilisi expetenda has et. Iudico dictas scriptorem an vim, ei alia mentitum est, ne has voluptua praesent.</p>-->
-<!--                                </div>-->
-
-<!--                            </div>-->
-
-<!--                        </li> &lt;!&ndash; end comment level 1 &ndash;&gt;-->
-
-<!--                        <li class="thread-alt depth-1 comment">-->
-
-<!--                            <div class="comment__avatar">-->
-<!--                                <img class="avatar" src="images/avatars/user-04.jpg" alt="" width="50" height="50">-->
-<!--                            </div>-->
-
-<!--                            <div class="comment__content">-->
-
-<!--                                <div class="comment__info">-->
-<!--                                    <div class="comment__author">John Doe</div>-->
-
-<!--                                    <div class="comment__meta">-->
-<!--                                        <div class="comment__time">Oct 05, 2020</div>-->
-<!--                                        <div class="comment__reply">-->
-<!--                                            <a class="comment-reply-link" href="#0">Reply</a>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-
-<!--                                <div class="comment__text">-->
-<!--                                <p>Sumo euismod dissentiunt ne sit, ad eos iudico qualisque adversarium, tota falli et mei. Esse euismod-->
-<!--                                urbanitas ut sed, et duo scaevola pericula splendide. Primis veritus contentiones nec ad, nec et-->
-<!--                                tantas semper delicatissimi.</p>-->
-<!--                                </div>-->
-
-<!--                            </div>-->
-
-<!--                            <ul class="children">-->
-
-<!--                                <li class="depth-2 comment">-->
-
-<!--                                    <div class="comment__avatar">-->
-<!--                                        <img class="avatar" src="images/avatars/user-03.jpg" alt="" width="50" height="50">-->
-<!--                                    </div>-->
-
-<!--                                    <div class="comment__content">-->
-
-<!--                                        <div class="comment__info">-->
-<!--                                            <div class="comment__author">Kakashi Hatake</div>-->
-
-<!--                                            <div class="comment__meta">-->
-<!--                                                <div class="comment__time">Oct 05, 2020</div>-->
-<!--                                                <div class="comment__reply">-->
-<!--                                                    <a class="comment-reply-link" href="#0">Reply</a>-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-
-<!--                                        <div class="comment__text">-->
-<!--                                            <p>Duis sed odio sit amet nibh vulputate-->
-<!--                                            cursus a sit amet mauris. Morbi accumsan ipsum velit. Duis sed odio sit amet nibh vulputate-->
-<!--                                            cursus a sit amet mauris</p>-->
-<!--                                        </div>-->
-
-<!--                                    </div>-->
-
-<!--                                    <ul class="children">-->
-
-<!--                                        <li class="depth-3 comment">-->
-
-<!--                                            <div class="comment__avatar">-->
-<!--                                                <img class="avatar" src="images/avatars/user-04.jpg" alt="" width="50" height="50">-->
-<!--                                            </div>-->
-
-<!--                                            <div class="comment__content">-->
-
-<!--                                                <div class="comment__info">-->
-<!--                                                    <div class="comment__author">John Doe</div>-->
-
-<!--                                                    <div class="comment__meta">-->
-<!--                                                        <div class="comment__time">Oct 04, 2020</div>-->
-<!--                                                        <div class="comment__reply">-->
-<!--                                                            <a class="comment-reply-link" href="#0">Reply</a>-->
-<!--                                                        </div>-->
-<!--                                                    </div>-->
-<!--                                                </div>-->
-
-<!--                                                <div class="comment__text">-->
-<!--                                                <p>Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est-->
-<!--                                                etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum.</p>-->
-<!--                                                </div>-->
-
-<!--                                            </div>-->
-
-<!--                                        </li>-->
-
-<!--                                    </ul>-->
-
-<!--                                </li>-->
-
-<!--                            </ul>-->
-
-<!--                        </li> &lt;!&ndash; end comment level 1 &ndash;&gt;-->
-
-<!--                        <li class="depth-1 comment">-->
-
-<!--                            <div class="comment__avatar">-->
-<!--                                <img class="avatar" src="images/avatars/user-02.jpg" alt="" width="50" height="50">-->
-<!--                            </div>-->
-
-<!--                            <div class="comment__content">-->
-
-<!--                                <div class="comment__info">-->
-<!--                                    <div class="comment__author">Shikamaru Nara</div>-->
-
-<!--                                    <div class="comment__meta">-->
-<!--                                        <div class="comment__time">Oct 03, 2020</div>-->
-<!--                                        <div class="comment__reply">-->
-<!--                                            <a class="comment-reply-link" href="#0">Reply</a>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-
-<!--                                <div class="comment__text">-->
-<!--                                <p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem.</p>-->
-<!--                                </div>-->
-
-<!--                            </div>-->
-
-<!--                        </li>  &lt;!&ndash; end comment level 1 &ndash;&gt;-->
-
-<!--                    </ol>-->
-<!--                    &lt;!&ndash; END commentlist &ndash;&gt;-->
-
-<!--                </div> &lt;!&ndash; end col-full &ndash;&gt;-->
-<!--            </div> &lt;!&ndash; end comments &ndash;&gt;-->
-
-
-<!--            <div class="row comment-respond">-->
-
-<!--                &lt;!&ndash; START respond &ndash;&gt;-->
-<!--                <div id="respond" class="column">-->
-
-<!--                    <h3>-->
-<!--                    Add Comment-->
-<!--                    <span>Your email address will not be published.</span>-->
-<!--                    </h3>-->
-
-<!--                    <form name="contactForm" id="contactForm" method="post" action="" autocomplete="off">-->
-<!--                        <fieldset>-->
-
-<!--                            <div class="form-field">-->
-<!--                                <input name="cName" id="cName" class="h-full-width h-remove-bottom" placeholder="Your Name" value="" type="text">-->
-<!--                            </div>-->
-
-<!--                            <div class="form-field">-->
-<!--                                <input name="cEmail" id="cEmail" class="h-full-width h-remove-bottom" placeholder="Your Email" value="" type="text">-->
-<!--                            </div>-->
-
-<!--                            <div class="form-field">-->
-<!--                                <input name="cWebsite" id="cWebsite" class="h-full-width h-remove-bottom" placeholder="Website" value="" type="text">-->
-<!--                            </div>-->
-
-<!--                            <div class="message form-field">-->
-<!--                                <textarea name="cMessage" id="cMessage" class="h-full-width" placeholder="Your Message"></textarea>-->
-<!--                            </div>-->
-
-<!--                            <br>-->
-<!--                            <input name="submit" id="submit" class="btn btn&#45;&#45;primary btn-wide btn&#45;&#45;large h-full-width" value="Add Comment" type="submit">-->
-
-<!--                        </fieldset>-->
-<!--                    </form> &lt;!&ndash; end form &ndash;&gt;-->
-
-<!--                </div>-->
-<!--                &lt;!&ndash; END respond&ndash;&gt;-->
-
-<!--            </div> &lt;!&ndash; end comment-respond &ndash;&gt;-->
-
-<!--        </div> &lt;!&ndash; end comments-wrap &ndash;&gt;-->
 
 
     </section> <!-- end s-content -->
@@ -509,13 +257,10 @@
                     <h5>About Our Site</h5>
 
                     <p>
-                    Lorem ipsum Ut velit dolor Ut labore id fugiat in ut
-                    fugiat nostrud qui in dolore commodo eu magna Duis
-                    cillum dolor officia esse mollit proident Excepteur
-                    exercitation nulla. Lorem ipsum In reprehenderit
-                    commodo aliqua irure.
+                    Welcome to Inkspire, a captivating online platform dedicated to igniting inspiration and fostering creativity through the power of words.
+                        Explore a world of thought-provoking articles, captivating stories, and insightful musings penned by a diverse community of talented writers.
+                        Unleash your imagination, enrich your mind, and join us on a journey of discovery and inspiration at Inkspire, where words come alive.
                     </p>
-
                 </div> <!-- end s-footer__info -->
 
                 <div class="column large-2 medium-3 tab-6 s-footer__site-links">
@@ -576,8 +321,8 @@
             <div class="row">
                 <div class="column">
                     <div class="ss-copyright">
-                        <span>© Copyright Calvin 2020</span>
-                        <span>Design by <a href="https://www.styleshout.com/">StyleShout</a></span>
+                        <span>© Copyright Inkspire 2023</span>
+
                     </div> <!-- end ss-copyright -->
                 </div>
             </div>

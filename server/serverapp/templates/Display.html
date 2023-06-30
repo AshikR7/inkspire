@@ -48,8 +48,8 @@
    <header class="s-header">
 
         <div class="s-header__logo">
-            <a class="logo" href="index.html">
-                <img src="images/logo.svg" alt="Homepage">
+            <a class="logo" href="http://127.0.0.1:8000/inkspire/index/">
+                <img src="{% static 'parallax/logo main.png' %}" style="height: 50px;width: 50px;margin-left:220%">
             </a>
         </div>
 
@@ -57,34 +57,23 @@
 
             <nav class="s-header__nav-wrap">
 
-                <h3 class="s-header__nav-heading h6">Navigate to</h3>
+                <h3 class="s-header__nav-heading h6" style="color:black;">Navigate to</h3>
 
                 <ul class="s-header__nav">
-                    <li class="current"><a href="http://127.0.0.1:8000/inkspire/index/" title="" style="color:black">Home</a></li>
+                    <li class="current"><a href="http://127.0.0.1:8000/inkspire/index/" title="" style="color:black;">Home</a></li>
                     <li class="has-children">
-                        <a href="#0" title="" style="color:black">Categories</a>
+                        <a href="#0" title="" style="color:black;">Profile</a>
                         <ul class="sub-menu">
-                            <li><a href=""  >Design</a></li>
-                            <li><a href="http://127.0.0.1:8000/inkspire/userprofile/">profile</a></li>
-                            <li><a href="http://127.0.0.1:8000/inkspire/blogupload/">upload</a></li>
-                            <li><a href="http://127.0.0.1:8000/inkspire/proimageupload">ProPic</a></li>
-                            <li><a href="category.html">Work</a></li>
-                            <li><a href="category.html">Health</a></li>
-                            <li><a href="category.html">Family</a></li>
-                            <li><a href="category.html">Relationship</a></li>
+                            <li><a href="http://127.0.0.1:8000/inkspire/userprofile/">Account</a></li>
+                            <li><a href="http://127.0.0.1:8000/inkspire/proimageupload">Upload Photo</a></li>
+
+
                         </ul>
                     </li>
-                    <li class="has-children">
-                        <a href="#0" title=""style="color:black">Blog</a>
-                        <ul class="sub-menu">
-                            <li><a href="single-video.html">Video Post</a></li>
-                            <li><a href="single-audio.html">Audio Post</a></li>
-                            <li><a href="single-standard.html">Standard Post</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="styles.html" title=""style="color:black">Profile</a></li>
-                    <li><a href="about.html" title="" style="color:black">Upload</a></li>
-                    <li><a href="contact.html" title=""style="color:black">Contact</a></li>
+                    <li><a href="http://127.0.0.1:8000/inkspire/blogupload/ title=" style="color:black;">Create Story</a></li>
+                    <li><a href="http://127.0.0.1:8000/inkspire/bloglist/" title="" style="color:black;">Your Stories</a></li>
+
+                    <li><a href="http://127.0.0.1:8000/inkspire/logout/" title="" style="color:black;">Logout</a></li>
                 </ul> <!-- end s-header__nav -->
 
 

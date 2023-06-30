@@ -48,8 +48,8 @@
     <header class="s-header">
 
         <div class="s-header__logo">
-            <a class="logo" href="index.html">
-                <img src="images/logo.svg" alt="Homepage">
+            <a class="logo" href="http://127.0.0.1:8000/inkspire/index/">
+                <img src="{% static 'parallax/logo main.png' %}" style="height: 50px;width: 50px;margin-left:220%">
             </a>
         </div>
 
@@ -62,29 +62,18 @@
                 <ul class="s-header__nav">
                     <li class="current"><a href="http://127.0.0.1:8000/inkspire/index/" title="">Home</a></li>
                     <li class="has-children">
-                        <a href="#0" title="">Categories</a>
+                        <a href="#0" title="">Profile</a>
                         <ul class="sub-menu">
-                            <li><a href="">Design</a></li>
-                            <li><a href="http://127.0.0.1:8000/inkspire/userprofile/">profile</a></li>
-                            <li><a href="http://127.0.0.1:8000/inkspire/blogupload/">upload</a></li>
-                            <li><a href="http://127.0.0.1:8000/inkspire/proimageupload">ProPic</a></li>
-                            <li><a href="category.html">Work</a></li>
-                            <li><a href="category.html">Health</a></li>
-                            <li><a href="category.html">Family</a></li>
-                            <li><a href="category.html">Relationship</a></li>
+                            <li><a href="http://127.0.0.1:8000/inkspire/userprofile/">Account</a></li>
+                            <li><a href="http://127.0.0.1:8000/inkspire/proimageupload">Upload Photo</a></li>
+
+
                         </ul>
                     </li>
-                    <li class="has-children">
-                        <a href="#0" title="">Blog</a>
-                        <ul class="sub-menu">
-                            <li><a href="single-video.html">Video Post</a></li>
-                            <li><a href="single-audio.html">Audio Post</a></li>
-                            <li><a href="single-standard.html">Standard Post</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="styles.html" title="">Profile</a></li>
-                    <li><a href="about.html" title="">Upload</a></li>
-                    <li><a href="contact.html" title="">Contact</a></li>
+                    <li><a href="http://127.0.0.1:8000/inkspire/blogupload/">Create Story</a></li>
+                    <li><a href="http://127.0.0.1:8000/inkspire/bloglist/" title="">Your Stories</a></li>
+
+                    <li><a href="http://127.0.0.1:8000/inkspire/logout/" title="">Logout</a></li>
                 </ul> <!-- end s-header__nav -->
 
 
@@ -123,7 +112,7 @@
                       <li style="margin-top:-160px">
                         {% for i,j in image %}
                             <h1 style="color:blue">{{j}}</h1>
-                            <img src="/static/profile_pictures/{{i}}" alt="" style="width:60px;height:60px;border-radius: 100%;">
+                          <a href="http://127.0.0.1:8000/inkspire/userprofile/"><img src="/static/profile_pictures/{{i}}" alt="" style="width:60px;height:60px;border-radius: 100%;"></a>
                             {% endfor %}
                     </li>
 
@@ -143,21 +132,21 @@
 
                 <div class="row s-hero__slide-content animate-this">
                     <div class="column">
-                        <div class="s-hero__slide-meta">
-                            <span class="cat-links">
-                                <a href="#0">Lifestyle</a>
-                                <a href="#0">Design</a>
-                            </span>
-                            <span class="byline">
-                                Posted by
-                                <span class="author">
-                                    <a href="#0">Jonathan Doe</a>
-                                </span>
-                            </span>
-                        </div>
+<!--                        <div class="s-hero__slide-meta">-->
+<!--                            <span class="cat-links">-->
+<!--                                <a href="#0">Lifestyle</a>-->
+<!--                                <a href="#0">Design</a>-->
+<!--                            </span>-->
+<!--                            <span class="byline">-->
+<!--                                Posted by-->
+<!--                                <span class="author">-->
+<!--                                    <a href="#0">Jonathan Doe</a>-->
+<!--                                </span>-->
+<!--                            </span>-->
+<!--                        </div>-->
                         <h1 class="s-hero__slide-text">
                             <a href="#0">
-                                Tips and Ideas to Help You Start Blog.
+                                Empower Your Voice, Amplify Your Thoughts
                             </a>
                         </h1>
                     </div>
@@ -171,17 +160,17 @@
 
                 <div class="row s-hero__slide-content animate-this">
                     <div class="column">
-                        <div class="s-hero__slide-meta">
-                            <span class="cat-links">
-                                <a href="#0">Work</a>
-                            </span>
-                            <span class="byline">
-                                Posted by
-                                <span class="author">
-                                    <a href="#0">Juan Dela Cruz</a>
-                                </span>
-                            </span>
-                        </div>
+<!--                        <div class="s-hero__slide-meta">-->
+<!--                            <span class="cat-links">-->
+<!--                                <a href="#0">Work</a>-->
+<!--                            </span>-->
+<!--                            <span class="byline">-->
+<!--                                Posted by-->
+<!--                                <span class="author">-->
+<!--                                    <a href="#0">Juan Dela Cruz</a>-->
+<!--                                </span>-->
+<!--                            </span>-->
+<!--                        </div>-->
                         <h1 class="s-hero__slide-text">
                             <a href="#0">
                                 Minimalism: The Art of Keeping It Simple.
@@ -194,25 +183,25 @@
 
             <div class="s-hero__slide">
 
-                <div class="s-hero__slide-bg" style="background-image: url('images/slide3-bg-3000.jpg');"></div>
+                <div class="s-hero__slide-bg" style="background-image: url({% static 'car3.jpg' %});" ></div>
 
                 <div class="row s-hero__slide-content animate-this">
                     <div class="column">
-                        <div class="s-hero__slide-meta">
-                            <span class="cat-links">
-                                <a href="#0">Health</a>
-                                <a href="#0">Lifestyle</a>
-                            </span>
-                            <span class="byline">
-                                Posted by
-                                <span class="author">
-                                    <a href="#0">Jane Doe</a>
-                                </span>
-                            </span>
-                        </div>
+<!--                        <div class="s-hero__slide-meta">-->
+<!--                            <span class="cat-links">-->
+<!--                                <a href="#0">Health</a>-->
+<!--                                <a href="#0">Lifestyle</a>-->
+<!--                            </span>-->
+<!--                            <span class="byline">-->
+<!--                                Posted by-->
+<!--                                <span class="author">-->
+<!--                                    <a href="#0">Jane Doe</a>-->
+<!--                                </span>-->
+<!--                            </span>-->
+<!--                        </div>-->
                         <h1 class="s-hero__slide-text">
                             <a href="#0">
-                                10 Reasons Why Being in Nature Is Good For You.
+                                Transform Your Thoughts Into Masterpieces
                             </a>
                         </h1>
                     </div>
@@ -317,8 +306,8 @@
                                     Prev
                                 </span>
                             </li>
-                            <li><a class="pgn__num" href="#0">1</a></li>
-                            <li><span class="pgn__num current">2</span></li>
+                            <li><a class="pgn__num current" href="#0">1</a></li>
+                            <li><span class="pgn__num ">2</span></li>
                             <li><a class="pgn__num" href="#0">3</a></li>
                             <li><a class="pgn__num" href="#0">4</a></li>
                             <li><a class="pgn__num" href="#0">5</a></li>
@@ -342,7 +331,7 @@
     ================================================== -->
     <footer class="s-footer">
 
-        <div class="s-footer__main">
+        <div class="s-footer__main"  >
 
             <div class="row">
 
@@ -351,11 +340,9 @@
                     <h5>About Our Site</h5>
 
                     <p>
-                    Lorem ipsum Ut velit dolor Ut labore id fugiat in ut
-                    fugiat nostrud qui in dolore commodo eu magna Duis
-                    cillum dolor officia esse mollit proident Excepteur
-                    exercitation nulla. Lorem ipsum In reprehenderit
-                    commodo aliqua irure.
+                    Welcome to Inkspire, a captivating online platform dedicated to igniting inspiration and fostering creativity through the power of words.
+                        Explore a world of thought-provoking articles, captivating stories, and insightful musings penned by a diverse community of talented writers.
+                        Unleash your imagination, enrich your mind, and join us on a journey of discovery and inspiration at Inkspire, where words come alive.
                     </p>
 
                 </div> <!-- end s-footer__info -->
@@ -392,7 +379,7 @@
 
                     <h5>Sign Up for Newsletter</h5>
 
-                    <p>Signup to get updates on articles, interviews and events.</p>
+                    <p>Signup to get updates on articles</p>
 
                     <div class="subscribe-form">
 
@@ -418,8 +405,8 @@
             <div class="row">
                 <div class="column">
                     <div class="ss-copyright">
-                        <span>© Copyright Calvin 2020</span>
-                        <span>Design by <a href="https://www.styleshout.com/">StyleShout</a></span>
+                        <span>© Copyright Inkspire 2023</span>
+
                     </div> <!-- end ss-copyright -->
                 </div>
             </div>
